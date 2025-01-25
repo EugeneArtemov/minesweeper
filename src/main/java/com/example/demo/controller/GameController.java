@@ -19,8 +19,6 @@ import java.util.Map;
 public class GameController {
     private final GameService gameService;
 
-    private static final Logger logger = LoggerFactory.getLogger(GameController.class);
-
     //@Operation(summary = "Метод для начала новой игры")
     @PostMapping("/new")
     public ResponseEntity<GameResponse> createGame(@RequestBody GameResponse request) {
