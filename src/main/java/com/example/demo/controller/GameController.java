@@ -26,7 +26,7 @@ public class GameController {
     public ResponseEntity<GameResponse> createGame(@RequestBody GameResponse request) {
         log.debug("POST-request, createGame - start, dto = {}", request);
         GameResponse game = gameService.createGame(request);
-        log.debug("POST-request, createGame - end, response = {}", request);
+        log.debug("POST-request, createGame - end, response = {}", game);
         return ResponseEntity.ok(game);
     }
 
@@ -38,7 +38,7 @@ public class GameController {
         int row = (int) request.get("row");
         int col = (int) request.get("col");
         GameResponse game = gameService.makeTurn(gameId, row, col);
-        log.debug("POST-request, makeTurn - end, response = {}", request);
+        log.debug("POST-request, makeTurn - end, response = {}", game);
         return ResponseEntity.ok(game);
     }
 
